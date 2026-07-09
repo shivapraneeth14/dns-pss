@@ -1,0 +1,44 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, sans-serif; background: #f5f5f5; color: #333; padding: 2rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.5rem; margin-bottom: 1rem; color: #1a1a2e; }
+a { color: #0066cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+th, td { padding: .75rem 1rem; text-align: left; border-bottom: 1px solid #eee; }
+th { background: #f8f9fa; font-weight: 600; font-size: .8rem; text-transform: uppercase; color: #666; }
+tr:last-child td { border-bottom: none; }
+form { display: flex; gap: .5rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: center; }
+input { padding: .5rem .75rem; border: 1px solid #ddd; border-radius: 6px; font-size: .9rem; flex: 1; min-width: 200px; }
+input:focus { outline: none; border-color: #0066cc; }
+button, .btn { padding: .5rem 1rem; border: none; border-radius: 6px; font-size: .9rem; cursor: pointer; font-weight: 500; }
+.btn-primary { background: #0066cc; color: #fff; }
+.btn-primary:hover { background: #0052a3; }
+.btn-sm { padding: .25rem .5rem; font-size: .8rem; }
+.btn-success { background: #28a745; color: #fff; }
+.btn-success:hover { background: #218838; }
+.btn-warning { background: #ffc107; color: #333; }
+.btn-warning:hover { background: #e0a800; }
+.btn-danger { background: #dc3545; color: #fff; }
+.btn-danger:hover { background: #c82333; }
+.badge { display: inline-block; padding: .15rem .5rem; border-radius: 999px; font-size: .75rem; font-weight: 600; }
+.badge-active { background: #d4edda; color: #155724; }
+.badge-dns_verified { background: #cce5ff; color: #004085; }
+.badge-inactive { background: #f8d7da; color: #721c24; }
+.badge-pending { background: #fff3cd; color: #856404; }
+.badge-failed { background: #f8d7da; color: #721c24; }
+.error { color: #dc3545; font-size: .85rem; margin-top: .25rem; }
+.success { color: #28a745; font-size: .85rem; margin-top: .25rem; }
+.empty { text-align: center; padding: 2rem; color: #999; font-style: italic; }
+.actions { display: flex; gap: .25rem; flex-wrap: wrap; }
+.back { display: inline-block; margin-bottom: 1rem; font-size: .9rem; }
+.dns-records { font-size: .75rem; line-height: 1.8; min-width: 220px; }
+.dns-records .record { white-space: nowrap; display: flex; align-items: center; gap: 3px; }
+.dns-records .record + .record { margin-top: 1px; }
+.dns-records .record-label { display: inline-block; width: 40px; font-weight: 600; font-size: .65rem; color: #666; text-transform: uppercase; }
+.dns-records .record-name { font-family: monospace; font-size: .75rem; color: #333; min-width: 100px; }
+.dns-records .record-arrow { color: #999; margin: 0 2px; }
+.dns-records .record-value { background: #f0f0f0; padding: 1px 5px; border-radius: 3px; font-size: .72rem; max-width: 140px; overflow: hidden; text-overflow: ellipsis; }
+.btn-copy { background: none; border: none; cursor: pointer; font-size: .75rem; padding: 1px 3px; opacity: .6; line-height: 1; }
+.btn-copy:hover { opacity: 1; }
+.btn-outline { background: transparent; color: #666; border: 1px solid #ccc; font-size: .75rem; padding: .2rem .45rem; }
+.btn-outline:hover { background: #eee; }

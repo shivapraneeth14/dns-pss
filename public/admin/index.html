@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Admin — Tenants</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Tenants</h1>
+
+  <p id="error-msg" class="error" style="display:none"></p>
+
+  <form id="create-tenant">
+    <input name="tenantName" placeholder="Tenant name (e.g. ABC Pvt Ltd)" required>
+    <button type="submit" class="btn btn-primary">Create Tenant</button>
+  </form>
+
+  <table id="tenant-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td colspan="3" class="empty">Loading...</td></tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 2rem; font-size: .8rem; color: #999;">
+    Multi-Tenant POC — Custom Domain Resolution
+  </p>
+
+  <script src="admin.js"></script>
+</body>
+</html>
