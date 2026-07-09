@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 
 const tenantLookup = require('./middleware/tenantLookup');
 const tenantRoutes = require('./routes/tenants');
@@ -10,12 +11,25 @@ const app = express();
 
 app.use(express.json());
 
-if (!process.env.VERCEL) {
-  app.use('/admin', express.static(path.join(__dirname, 'public', 'admin')));
-}
-
 app.use('/api/tenants', tenantRoutes);
 app.use('/api/domains', domainRoutes);
+
+// Redirect root to admin, serve admin static files
+const adminDir = path.join(__dirname, 'public', 'admin');
+app.get('/', (req, res) => res.redirect('/admin/'));
+app.get(['/admin', '/admin/*'], (req, res) => {
+  let filePath;
+  if (req.path === '/admin' || req.path === '/admin/') {
+    filePath = path.join(adminDir, 'index.html');
+  } else {
+    filePath = path.join(__dirname, 'public', req.path.replace(/^\//, ''));
+  }
+  if (fs.existsSync(filePath)) {
+    res.sendFile(filePath);
+  } else {
+    res.status(404).send('Not found');
+  }
+});
 
 app.get('/api/tenant', tenantLookup, (req, res) => {
   if (req.tenant) {
